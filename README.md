@@ -1,29 +1,7 @@
 # vue-imooc-ebook
 
-## Project setup
-```
-npm install
-```
+# 项目概述
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+      这个项目实现了书城首页、电子书详情页、电子书阅读界面的跳转。
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+  
