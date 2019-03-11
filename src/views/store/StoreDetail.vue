@@ -66,11 +66,6 @@
     <!--立即阅读部分-->
     <div class="bottom-wrapper">
       <div class="bottom-btn" @click.stop.prevent="readBook()">{{$t('detail.read')}}</div>
-      <!--<div class="bottom-btn" @click.stop.prevent="trialListening()">{{$t('detail.listen')}}</div>-->
-      <!--<div class="bottom-btn" @click.stop.prevent="addOrRemoveShelf()">-->
-        <!--<span class="icon-check" v-if="inBookShelf"></span>-->
-        <!--{{inBookShelf ? $t('detail.isAddedToShelf') : $t('detail.addOrRemoveShelf')}}-->
-      <!--</div>-->
     </div>
     <toast :text="toastText" ref="toast"></toast>
   </div>
