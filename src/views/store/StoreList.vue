@@ -3,6 +3,7 @@
   <div class="book-list-wrapper">
     <detail-title :title="title" :showShelf="true" @back="back" ref="title"></detail-title>
     <scroll class="book-list-scroll-wrapper" :top="42" @onScroll="onScroll" ref="scroll">
+      <!--list是对象而不是数组，里面的属性值为数组-->
       <featured :data="value" :titleText="titleText ? titleText : getCategoryText(key)" :btnText="''" v-for="(value, key, index) in list"
                 :key="index"></featured>
     </scroll>
@@ -71,10 +72,12 @@
           const keyword = this.$route.query.keyword;
           if (category) {
             // Object.keys方法遍历对象，最终返回一个由属性名组成的数组
-            const key = Object.keys(this.list).filter(item => item === category)[0];
-            const data = this.list[key]; // 获取图书列表中对应分类的数据数组
+            // const key = Object.keys(this.list).filter(item => item === category)[0];
+            // const data = this.list[key]; // 获取图书列表中对应分类的数据数组
+            const data = this.list[category];
             this.list = {};
-            this.list[key] = data // 重新设置list值，让它变成只含有对应分类的数据
+            // this.list[key] = data // 重新设置list值，让它变成只含有对应分类的数据
+            this.list[category] = data
           } else if (keyword) {
             Object.keys(this.list).filter(key => { // 这里的key是原始list数组中的每一个分类名称,每一个分类名称就是list对象的属性
               // 每一个分类名称的值都是包含所有图书数据的数组，对每一个分类数组进行过滤操作，保留图书名称中含有关键词的图书数据，
